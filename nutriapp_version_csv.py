@@ -33,6 +33,36 @@ def generate_menu(selected_dishes, data):
                 menu[day][meal] = {"nom": "No seleccionat", "ingredients": "", "passos": ""}
     return menu
 
+#Function to generate weekly meny GRID
+
+def create_menu_grid(menu):
+    """Crea una tabla/grid con el menú semanal"""
+    # Crear un DataFrame para la visualización en grid
+    days = ["Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte", "Diumenge"]
+    meals = ["Desdejuni", "Dinar", "Sopar", "Snack"]
+
+    menu_grid = pd.DataFrame(index=meals, columns=days)
+
+    #for day in days:
+     #   for meal in meals:
+      #      if day in menu and meal in menu[day]:
+       #         menu_grid.loc[meal, day] = menu[day][meal]["nom"]
+        #    else:
+         #       menu_grid.loc[meal, day] = "Lliure"
+
+    for day in days:
+        for meal in meals:
+            if day in menu and meal in menu[day]:
+                if menu[day][meal]["nom"] == "No seleccionat":
+                    menu_grid.loc[meal, day] = "———"  
+                else:
+                    menu_grid.loc[meal, day] = menu[day][meal]["nom"]
+            else:
+                menu_grid.loc[meal, day] = "———"         
+    
+    
+    return menu_grid
+
 # Load the data
 st.title("Generador de Menús Setmanals")
 st.sidebar.title("Opcions de filtratge")
@@ -109,6 +139,14 @@ for day in days:
 # Generate the weekly menu
 if st.button("Generar Menú Setmanal"):
     menu = generate_menu(st.session_state.selected_dishes, data)  # Pass 'data' as the second argument
+    
+    #Grid visualization
+    
+    st.subheader("Vista de Taula del Menú Setmanal")
+    menu_grid = create_menu_grid(menu)
+    st.table(menu_grid)
+    
+    #Menu visualization
     st.subheader("Menú Setmanal")
     for day, meals in menu.items():
         st.write(f"### **{day}**")
@@ -122,13 +160,42 @@ if st.button("Generar Menú Setmanal"):
                     for step in ast.literal_eval(details["passos"]):
                         st.write(f"- {step}")
 
-    # Export the menu to Word
+
+                        
+
+                        
+    # Create Menu DOC
     from docx import Document
     from io import BytesIO
 
     doc = Document()
     doc.add_heading("Menú Setmanal", level=1)
 
+    
+    # Grid in DOC
+    
+    table = doc.add_table(rows=len(meals)+1, cols=len(days)+1)
+
+    table.cell(0, 0).text = ""
+    for i, day in enumerate(days):
+        table.cell(0, i+1).text = day
+    for i, meal in enumerate(meals):
+        table.cell(i+1, 0).text = meal
+
+    for i, meal in enumerate(meals):
+        for j, day in enumerate(days):
+            if menu[day][meal]["nom"] == "No seleccionat":
+                table.cell(i+1, j+1).text = "———" 
+            else:
+                table.cell(i+1, j+1).text = menu[day][meal]["nom"]
+
+    for row in table.rows:
+        for cell in row.cells:
+            cell.paragraphs[0].alignment = 1  
+    
+    
+    # Corpus DOC
+    
     for day, meals in menu.items():
         doc.add_heading(day, level=2)
         for meal, details in meals.items():
@@ -140,11 +207,12 @@ if st.button("Generar Menú Setmanal"):
                 doc.add_paragraph("**Passos:**")
                 for step in ast.literal_eval(details["passos"]):
                     doc.add_paragraph(f"- {step}")
-
+    
     buffer = BytesIO()
     doc.save(buffer)
     buffer.seek(0)
 
+    # Export DOC
     st.download_button(
         label="Descarregar Menú en Word",
         data=buffer,
