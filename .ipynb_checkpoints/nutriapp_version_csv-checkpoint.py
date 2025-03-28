@@ -2,6 +2,9 @@ import streamlit as st
 import pandas as pd
 import ast  # To turn string lists into real lists Para convertir las listas almacenadas como strings en listas reales
 from docx import Document # To doc export part 4 the menu
+from io import BytesIO
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
 
 # Function to load the CSV data
 @st.cache_data
@@ -20,17 +23,20 @@ def generate_menu(selected_dishes, data):
     for day in days:
         menu[day] = {}
         for meal in meals:
-            dish_name = selected_dishes.get(f"{day}-{meal}", "No seleccionat")
-            if dish_name != "No seleccionat":
-                # Get the full details of the selected dish
-                dish_details = data[data["nom"] == dish_name].iloc[0]
-                menu[day][meal] = {
-                    "nom": dish_name,
-                    "ingredients": dish_details["ingredients"],
-                    "passos": dish_details["passos"]
-                }
+            dishes = selected_dishes.get(f"{day}-{meal}", [])
+            if dishes:
+                # Obtain details of each plate
+                dish_details = [
+                    {
+                        "nom": dish,
+                        "ingredients": data[data["nom"] == dish].iloc[0]["ingredients"],
+                        "passos": data[data["nom"] == dish].iloc[0]["passos"]
+                    }
+                    for dish in dishes
+                ]
+                menu[day][meal] = dish_details
             else:
-                menu[day][meal] = {"nom": "No seleccionat", "ingredients": "", "passos": ""}
+                menu[day][meal] = []
     return menu
 
 #Function to generate weekly meny GRID
@@ -53,15 +59,33 @@ def create_menu_grid(menu):
     for day in days:
         for meal in meals:
             if day in menu and meal in menu[day]:
-                if menu[day][meal]["nom"] == "No seleccionat":
-                    menu_grid.loc[meal, day] = "———"  
+                dishes = menu[day][meal]
+                if dishes:
+                    menu_grid.loc[meal, day] = ", ".join([dish["nom"] for dish in dishes])
                 else:
-                    menu_grid.loc[meal, day] = menu[day][meal]["nom"]
+                    menu_grid.loc[meal, day] = "———"
             else:
-                menu_grid.loc[meal, day] = "———"         
-    
-    
+                menu_grid.loc[meal, day] = "———"
     return menu_grid
+
+# Function to set borderlines to grid in WORD
+def set_table_borders(table):
+    
+    for row in table.rows:
+        for cell in row.cells:
+            tc = cell._tc
+            tcPr = tc.get_or_add_tcPr()
+            tcBorders = OxmlElement('w:tcBorders')
+
+            for border_name in ['top', 'left', 'bottom', 'right']:
+                border = OxmlElement(f'w:{border_name}')
+                border.set(qn('w:val'), 'single')  # Tipo de borde (línea simple)
+                border.set(qn('w:sz'), '4')       # Grosor del borde
+                border.set(qn('w:space'), '0')    # Espaciado
+                border.set(qn('w:color'), '000000')  # Color del borde (negro)
+                tcBorders.append(border)
+
+            tcPr.append(tcBorders)
 
 # Load the data
 st.title("Generador de Menús Setmanals")
@@ -90,7 +114,8 @@ st.sidebar.subheader("Filtrar per categoria única")
 selected_categories = st.sidebar.multiselect(
     "Selecciona una o més categories",
     options= unique_categories,
-    default=[]
+    default=[],
+    placeholder="Selecciona una o més opcions"
 )
 
 # Apply filters
@@ -124,16 +149,17 @@ for day in days:
     for meal in meals:
         # Create a unique key for each selection
         key = f"{day}-{meal}"
-        # Get the previously selected value or default to "No seleccionat"
-        previous_selection = st.session_state.selected_dishes.get(key, "No seleccionat")
+        # Get the previously selected value or default
+        previous_selection = st.session_state.selected_dishes.get(key, [])
         # Show only dishes corresponding to the selected moment of the day
-        options = ["No seleccionat"] + list(filtered_data["nom"].unique())
-        # If the previous selection is not in the current options, keep it
-        if previous_selection not in options and previous_selection != "No seleccionat":
-            options.append(previous_selection)
+        options = list(filtered_data["nom"].unique())
+        options_with_previous = list(set(options + previous_selection))
         # Update the session state with the new selection
-        st.session_state.selected_dishes[key] = st.selectbox(
-            f"{meal} ({day})", options, index=options.index(previous_selection) if previous_selection in options else 0
+        st.session_state.selected_dishes[key] = st.multiselect(
+            f"{meal} ({day})", 
+            options_with_previous, 
+            default=previous_selection,
+            placeholder="Selecciona una o més opcions"
         )
 
 # Generate the weekly menu
@@ -150,23 +176,26 @@ if st.button("Generar Menú Setmanal"):
     st.subheader("Menú Setmanal")
     for day, meals in menu.items():
         st.write(f"### **{day}**")
-        for meal, details in meals.items():
-            st.write(f"**{meal}:** {details['nom']}")
-            if details["nom"] != "No seleccionat":
-                with st.expander(f"Detalls de {details['nom']}"):
-                    st.write("**Ingredients:**")
-                    st.write(", ".join(ast.literal_eval(details["ingredients"])))
-                    st.write("**Passos:**")
-                    for step in ast.literal_eval(details["passos"]):
-                        st.write(f"- {step}")
+        for meal, dishes in meals.items():
+            st.write(f"**{meal}:**")
+            if dishes:
+                for dish in dishes:
+                    st.write(f"- {dish['nom']}")
+                    with st.expander(f"Detalls de {dish['nom']}"):
+                        st.write("**Ingredients:**")
+                        st.write(", ".join(ast.literal_eval(dish["ingredients"])))
+                        st.write("**Passos:**")
+                        for step in ast.literal_eval(dish["passos"]):
+                            st.write(f"- {step}")
+            else:
+                st.write("- No seleccionat")
 
 
                         
 
                         
     # Create Menu DOC
-    from docx import Document
-    from io import BytesIO
+    
 
     doc = Document()
     doc.add_heading("Menú Setmanal", level=1)
@@ -184,29 +213,34 @@ if st.button("Generar Menú Setmanal"):
 
     for i, meal in enumerate(meals):
         for j, day in enumerate(days):
-            if menu[day][meal]["nom"] == "No seleccionat":
-                table.cell(i+1, j+1).text = "———" 
+            dishes = menu[day][meal]  
+            if not dishes:  
+                table.cell(i + 1, j + 1).text = "———"
             else:
-                table.cell(i+1, j+1).text = menu[day][meal]["nom"]
+                table.cell(i + 1, j + 1).text = ", ".join([dish["nom"] for dish in dishes])
 
     for row in table.rows:
         for cell in row.cells:
             cell.paragraphs[0].alignment = 1  
     
+    set_table_borders(table) #Function to apply borders
     
     # Corpus DOC
     
     for day, meals in menu.items():
         doc.add_heading(day, level=2)
-        for meal, details in meals.items():
+        for meal, dishes in meals.items():
             doc.add_heading(meal, level=3)
-            doc.add_paragraph(f"**Plat:** {details['nom']}")
-            if details["nom"] != "No seleccionat":
-                doc.add_paragraph("**Ingredients:**")
-                doc.add_paragraph(", ".join(ast.literal_eval(details["ingredients"])))
-                doc.add_paragraph("**Passos:**")
-                for step in ast.literal_eval(details["passos"]):
-                    doc.add_paragraph(f"- {step}")
+            if dishes:
+                for dish in dishes:
+                    doc.add_paragraph(f"**Plat:** {dish['nom']}")
+                    doc.add_paragraph("**Ingredients:**")
+                    doc.add_paragraph(", ".join(ast.literal_eval(dish["ingredients"])))
+                    doc.add_paragraph("**Passos:**")
+                    for step in ast.literal_eval(dish["passos"]):
+                        doc.add_paragraph(f"- {step}")
+            else:
+                doc.add_paragraph("No seleccionat")
     
     buffer = BytesIO()
     doc.save(buffer)
