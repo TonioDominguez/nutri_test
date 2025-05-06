@@ -233,19 +233,26 @@ if st.button("Generar Menú Setmanal"):
             doc.add_heading(meal, level=3)
             if dishes:
                 for dish in dishes:
-                    doc.add_paragraph(f"Plat: {dish['nom']}")
-                    
+                    p = doc.add_paragraph()
+                    run = p.add_run("Plat:")
+                    run.bold = True
+                    p.add_run(f" {dish['nom']}")
+
                     # Ingredients list bullets style
-                    p = doc.add_paragraph("Ingredients:")
+                    p = doc.add_paragraph()
+                    run = p.add_run("Ingredients:")
+                    run.bold = True
                     ingredients_list = ast.literal_eval(dish["ingredients"])
                     for ingredient in ingredients_list:
                         p = doc.add_paragraph(ingredient, style='ListBullet')
 
                     # Steps list bullets style
-                    p = doc.add_paragraph("Passos:")
+                    p = doc.add_paragraph()
+                    run = p.add_run("Passos:")
+                    run.bold = True
                     steps_list = ast.literal_eval(dish["passos"])
                     for i, step in enumerate(steps_list, 1):
-                        p = doc.add_paragraph(f"{i}. {step}", style='ListBullet')
+                        p = doc.add_paragraph(f"{step}", style='List Number')
 
             else:
                 doc.add_paragraph("No seleccionat")
