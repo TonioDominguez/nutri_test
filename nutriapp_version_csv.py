@@ -14,6 +14,10 @@ def load_data():
     data["apartat"] = data["apartat"].apply(ast.literal_eval)
     return data
 
+@st.cache_data #Function to load the ingredients for the shopping list
+def load_ingredients_data():
+    return pd.read_csv("ingredientes_estandarizados.csv")
+
 # Function to generate the weekly menu
 def generate_menu(selected_dishes, data):
     menu = {}
@@ -38,6 +42,36 @@ def generate_menu(selected_dishes, data):
             else:
                 menu[day][meal] = []
     return menu
+
+# Function to generate the shopping list
+
+def generate_shopping_list(menu, ingredients_data):
+    shopping_list = {}
+
+    # Recorrer el menú
+    for day, meals in menu.items():
+        for meal, dishes in meals.items():
+            if dishes:
+                for dish in dishes:
+                    dish_name = dish['nom']
+                    # Buscar los ingredientes estandarizados para esta receta
+                    dish_ingredients = ingredients_data[ingredients_data['receta'] == dish_name]
+
+                    for _, ingredient in dish_ingredients.iterrows():
+                        ing_name = ingredient['ingrediente_estandar']
+                        cantidad = ingredient['cantidad']
+                        unidad = ingredient['unidad']
+
+                        if ing_name in shopping_list:
+                            if pd.notna(cantidad):
+                                shopping_list[ing_name]['cantidad'] += cantidad
+                        else:
+                            shopping_list[ing_name] = {
+                                'cantidad': cantidad if pd.notna(cantidad) else 0,
+                                'unidad': unidad if pd.notna(unidad) else ''
+                            }
+
+    return shopping_list
 
 #Function to generate weekly meny GRID
 
@@ -165,12 +199,24 @@ for day in days:
 # Generate the weekly menu
 if st.button("Generar Menú Setmanal"):
     menu = generate_menu(st.session_state.selected_dishes, data)  # Pass 'data' as the second argument
-    
+    ingredients_data = load_ingredients_data()
+    shopping_list = generate_shopping_list(menu, ingredients_data)
+
     #Grid visualization
     
     st.subheader("Vista de Taula del Menú Setmanal")
     menu_grid = create_menu_grid(menu)
     st.table(menu_grid)
+
+    #Shopping list visualization
+    st.subheader("Llista de la compra")
+    for ingredient, details in shopping_list.items():
+        cantidad = details['cantidad']
+        unidad = details['unidad']
+        if cantidad > 0:
+            st.write(f"- {ingredient}: {cantidad} {unidad}")
+        else:
+            st.write(f"- {ingredient}")
     
     #Menu visualization
     st.subheader("Menú Setmanal")
@@ -224,6 +270,18 @@ if st.button("Generar Menú Setmanal"):
             cell.paragraphs[0].alignment = 1  
     
     set_table_borders(table) #Function to apply borders
+
+    # Create shopping list in DOC
+    doc.add_page_break()
+    doc.add_heading("Llista de la compra", level=1)
+
+    for ingredient, details in shopping_list.items():
+        cantidad = details['cantidad']
+        unidad = details['unidad']
+        if cantidad > 0:
+            doc.add_paragraph(f"- {ingredient}: {cantidad} {unidad}")
+        else:
+            doc.add_paragraph(f"- {ingredient}")
     
     # Corpus DOC
     
@@ -252,7 +310,7 @@ if st.button("Generar Menú Setmanal"):
                     run.bold = True
                     steps_list = ast.literal_eval(dish["passos"])
                     for i, step in enumerate(steps_list, 1):
-                        p = doc.add_paragraph(f"{step}", style='List Number')
+                        p = doc.add_paragraph(f"{i}. {step}")
 
             else:
                 doc.add_paragraph("No seleccionat")
