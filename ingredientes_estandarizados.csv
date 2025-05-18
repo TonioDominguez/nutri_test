@@ -33,7 +33,7 @@ Cuinat de llenties,15ml d'oli d'oliva,,,oli d'oliva
 Cuinat de llenties,200 g de ceba blanca,200.0,g,ceba blanca
 Cuinat de llenties,0.3g de comí en pols (opcional),,,comi en pols
 Cuinat de llenties,0.5g de pebre vermell dolç (opcional),0.5,g,pebre vermell dolc
-Cuinat de llenties,100 g d'espinacs fresques (o kale),100.0,g,espinacs fresques
+Cuinat de llenties,100 g d'espinacs fresques (o kale),100.0,g,espinacs frescs
 Cuinat de llenties,Sal al gust,,,sal i pebre
 amanida,45g d'enciam roman,45.0,g,enciam roman
 amanida,25g de ruca,25.0,g,ruca
@@ -47,7 +47,7 @@ Ous frits amb pernil salat i ½ alvocat,30g de cuixot salat,30.0,g,cuixot salat
 Ous frits amb pernil salat i ½ alvocat,7ml d'oli d'oliva (1⁄2 cullerada),,,oli d'oliva
 Ous frits amb pernil salat i ½ alvocat,Sal i pebre al gust,,,sal i pebre
 Ous frits amb pernil salat i ½ alvocat,½ alvocat,100.0,g,alvocat
-Costelles de porc al romaní i boniato (prebiòtc),250 g de costella de porc amb os (veure observacions),250.0,g,costella de porc amb os
+Costelles de porc al romaní i boniato (prebiòtc),250 g de costella de porc amb os (veure observacions),250.0,g,costella de porc
 Costelles de porc al romaní i boniato (prebiòtc),2g de romaní fresc (0.5g si és en sec),2.0,g,romani fresc
 Costelles de porc al romaní i boniato (prebiòtc),Sal i pebre al gust,,,sal i pebre
 Costelles de porc al romaní i boniato (prebiòtc),5 g de mantega sense sal,5.0,g,mantega sense sal
@@ -78,7 +78,7 @@ Vinagreta,5 ml de suc de llimona,0.5,,llimona
 Vinagreta,0.3g de gingebre en pols (opcional),,,gingebre en pols
 Vinagreta,10 g d'eritritol (opcional),,,eritritol
 Vinagreta,2 g de cibulet (cebollino),2.0,g,cibulet
-Salmó amb mongetes amb mantequilla,1 llom de salmó (150-200g),1.0,,llom de salmo
+Salmó amb mongetes amb mantequilla,1 llom de salmó (150-200g),200.0,g,llom de salmo
 Salmó amb mongetes amb mantequilla,7ml d'oli d'oliva (1/2 cullerada),,,oli d'oliva
 Salmó amb mongetes amb mantequilla,Sal i pebre al gust,,,sal i pebre
 Salmó amb mongetes amb mantequilla,15 g de mantega sense sal,15.0,g,mantega sense sal
@@ -86,7 +86,7 @@ Salmó amb mongetes amb mantequilla,120 g de mongetes verdes,120.0,g,mongetes ve
 Salmó amb mongetes amb mantequilla,15 g d'ametlles,15.0,g,ametlles
 Salmó amb mongetes amb mantequilla,1 all,20.0,g,alls
 Salmó amb mongetes amb mantequilla,1⁄2 llimona,0.5,,llimona
-Hamburguesa de salmó amb pernil salat i patata (probiòtica),1 llom de salmó sense pell (200-250g),1.0,,llom de salmo sense pell
+Hamburguesa de salmó amb pernil salat i patata (probiòtica),1 llom de salmó sense pell (200-250g),250.0,g,llom de salmo
 Hamburguesa de salmó amb pernil salat i patata (probiòtica),1 ou,1.0,,ous
 Hamburguesa de salmó amb pernil salat i patata (probiòtica),8g de cibulet o part verd d'una ceba tendra o grell,8.0,g,cibulet
 Hamburguesa de salmó amb pernil salat i patata (probiòtica),1 all,20.0,g,alls
@@ -128,7 +128,7 @@ Amanida de sardines,200 g de cogombre (1⁄2 cogombre),200.0,g,cogombre
 Amanida de sardines,25 g de ceba morada (1/4 de ceba),25.0,g,ceba morada
 Amanida de sardines,100 g de pebre verd,100.0,g,pebre verd
 Amanida de sardines,10 olives negres,10.0,,olives negres
-Amanida de sardines,30-50 g de formatge feta,50.0,g,de formatge feta
+Amanida de sardines,30-50 g de formatge feta,50.0,g,formatge feta
 Amanida de sardines,1g d'orenga,1.0,g,orenga
 Amanida de sardines,15ml d'oli d'oliva,,,oli d'oliva
 Amanida de sardines,5ml de vinagre,5.0,ml,vinagre
@@ -161,7 +161,7 @@ Amanida grega,200 g de cogombre (1⁄2 cogombre),200.0,g,cogombre
 Amanida grega,25 g de ceba morada (1/4 de ceba),25.0,g,ceba morada
 Amanida grega,100 g de pebre verd,100.0,g,pebre verd
 Amanida grega,10 olives negres,10.0,,olives negres
-Amanida grega,30-50 g de formatge feta,50.0,g,de formatge feta
+Amanida grega,30-50 g de formatge feta,50.0,g,formatge feta
 Amanida grega,1 g d'orenga,1.0,g,orenga
 Amanida grega,15 ml d'oli d'oliva,,,oli d'oliva
 Amanida grega,5 ml de vinagre,5.0,ml,vinagre
@@ -189,12 +189,12 @@ Pa de plàtan amb xispes de xocolata,17 g de farina de coco,17.0,g,farina de coc
 Pa de plàtan amb xispes de xocolata,1 g de canyella,,,canyella
 Pa de plàtan amb xispes de xocolata,0.5 g de bicarbonat de sodi,,,bicarbonat de sodi
 Pa de plàtan amb xispes de xocolata,0.5 g de llevadura en pols (tipo Royal),,,llevadura en pols (postres)
-Pa de plàtan amb xispes de xocolata,3 ml d'essència de vainilla,3.0,ml,essencia de vainilla
+Pa de plàtan amb xispes de xocolata,3 ml d'essència de vainilla,,,essencia de vainilla
 Pa de plàtan amb xispes de xocolata,Sal,,,sal i pebre
 Pa de plàtan amb xispes de xocolata,10 g de xocolata 90%,10.0,g,xocolata 90%
 Pa de plàtan amb xispes de xocolata,10 g de nous picades,10.0,g,nous
 Pa de plàtan amb xispes de xocolata,2 g de stevia o eritritol (opcional),,,eritritol
-Escalopins de porc amb tomí i llimona amb coliflor al forn,150–200g d'escalops delomodecerdo(en1o 2 peces),200.0,g,d'escalops delomodecerdo
+Escalopins de porc amb tomí i llimona amb coliflor al forn,150–200g d'escalops delomodecerdo(en1o 2 peces),200.0,g,escalops de llom de porc
 Escalopins de porc amb tomí i llimona amb coliflor al forn,15ml d'oli d'oliva,,,oli d'oliva
 Escalopins de porc amb tomí i llimona amb coliflor al forn,1 gra d'all,4.0,g,alls
 Escalopins de porc amb tomí i llimona amb coliflor al forn,1⁄2 llimona,0.5,,llimona
@@ -256,14 +256,14 @@ Guacamole,Sal i pebre al gust,,,sal i pebre
 Granola,80g d'ametlles naturals,80.0,g,ametlles naturals
 Granola,70g de nous naturals,70.0,g,nous
 Granola,20g de llavors de carbassa,20.0,g,llavors de carbassa
-Granola,5-10g de chía (opcional),10.0,g,de chia
+Granola,5-10g de chía (opcional),10.0,g,xia
 Granola,20g d'ametlles filetejades (opcional),20.0,g,ametlles filetejades
 Granola,35g de llavors de lli mòltes,35.0,g,llavors de lli moltes
 Granola,10g de coco ratllat,10.0,g,coco ratllat
 Granola,55g d'eritritol,,,eritritol
 Granola,1 ou,1.0,,ous
 Granola,30g de mantega o oli de coco,30.0,g,mantega
-Granola,5ml d'essència de vainilla,5.0,ml,essencia de vainilla
+Granola,5ml d'essència de vainilla,,,essencia de vainilla
 Broqueta de gambes amb xoriç,80 g de gambes i 8 llagostins (pelats),80.0,g,gambes
 Broqueta de gambes amb xoriç,40 g de xoriço (tros sencer),40.0,g,xorico
 Broqueta de gambes amb xoriç,15ml d'oli d'oliva,,,oli d'oliva
@@ -308,7 +308,7 @@ Crema de carabassí,3g de julivert o coriandre (opcional),,,julivert
 "Tortilla de coliflor, formatge i salmó",Sal i pebre al gust,,,sal i pebre
 "Tortilla de coliflor, formatge i salmó",50g de salmó fumat,50.0,g,salmo fumat
 "Tortilla de coliflor, formatge i salmó",7ml d'oli d'oliva,,,oli d'oliva
-Tartar de tonyina amb alvocat,150g de de tonyina (com que es consumeix crua s’ha d’haver congelat prèviament),150.0,g,de tonyina
+Tartar de tonyina amb alvocat,150g de de tonyina (com que es consumeix crua s’ha d’haver congelat prèviament),150.0,g,tonyina
 Tartar de tonyina amb alvocat,15g de ceba morada,15.0,g,ceba morada
 Tartar de tonyina amb alvocat,5g de cibulet (part verd),5.0,g,cibulet
 Tartar de tonyina amb alvocat,2g de gingebre fresc (opcional),2.0,g,gingebre fresc
@@ -324,7 +324,7 @@ Bombó de xocolata,40g de llavors de carbassa,40.0,g,llavors de carbassa
 Bombó de xocolata,10g de cacau nibs (opcional),,,cacau nibs
 Bombó de xocolata,10g d'eritritol,,,eritritol
 Bombó de xocolata,Sal gruixuda (opcional),,,sal gruixuda
-Costelles de porc torrades bolets a la planxa,"400g de costellam de porc complet (suposant 50% carn, 50% ossos)",400.0,g,costellam de porc complet
+Costelles de porc torrades bolets a la planxa,"400g de costellam de porc complet (suposant 50% carn, 50% ossos)",400.0,g,costella de porc
 Costelles de porc torrades bolets a la planxa,Sal i pebre,,,sal i pebre
 Marinada Bbq,30g de ceba blanca,30.0,g,ceba blanca
 Marinada Bbq,1-2 dents d'all,4.0,g,alls
@@ -352,7 +352,7 @@ Amanida de tonyina,Sal,,,sal i pebre
 Amanida de tonyina,½ alvocat,100.0,g,alvocat
 Amanida de tonyina,100-150g lloms de tonyina en oli d’oliva,150.0,g,lloms de tonyina
 Amanida de pollastre amb salsa césar (ceto),150g de pit de pollastre a la planxa,150.0,g,pit de pollastre
-Amanida de pollastre amb salsa césar (ceto),100g d'encisam romanès,100.0,g,encisam romanes
+Amanida de pollastre amb salsa césar (ceto),100g d'encisam romanès,100.0,g,enciam roman
 Amanida de pollastre amb salsa césar (ceto),30g de maionesa,30.0,g,maionesa
 Amanida de pollastre amb salsa césar (ceto),20g de formatge parmesà,20.0,g,formatge parmesa
 Amanida de pollastre amb salsa césar (ceto),5g de mostassa Dijon,5.0,g,mostassa dijon
@@ -399,8 +399,8 @@ Ceto-creps,100g de mató,100.0,g,mato
 Ceto-creps,15g de mantega,15.0,g,mantega
 Ceto-creps,30g de farina de ametlles o de lli,30.0,g,farina de ametlles o de lli
 Ceto-creps,0.5g de canyella en pols,,,canyella en pols
-Ceto-creps,5ml d'essència de vainilla,5.0,ml,essencia de vainilla
-Ceto-creps,1⁄2 culleradeta pols de coure (royal),0.5,,culleradeta pols de coure
+Ceto-creps,5ml d'essència de vainilla,,,essencia de vainilla
+Ceto-creps,1⁄2 culleradeta pols de coure (royal),,,llevadura en pols (postres)
 Ceto-creps,Sal,,,sal i pebre
 Ceto-creps,Oli d'oliva,,,oli d'oliva
 Ceto-creps,10g d'eritritol,,,eritritol
@@ -408,7 +408,7 @@ Ceto-nutella,40g de xocolata 90%,40.0,g,xocolata 90%
 Ceto-nutella,30g d'avellanes naturals,30.0,g,avellanes naturals
 Ceto-nutella,25g de mantega sense sal o d'oli de coco,25.0,g,mantega sense sal
 Ceto-nutella,15g de cacau en pols sense sucre (opcional),,,cacau en pols sense sucre
-Ceto-nutella,5ml d'essència de vainilla,5.0,ml,essencia de vainilla
+Ceto-nutella,5ml d'essència de vainilla,,,essencia de vainilla
 Ceto-nutella,10g d'eritritol,,,eritritol
 Ceto-nutella,Sal (opcional),,,sal i pebre
 Hamburguesa Tex-Mex,300g de carn picada — de boví2,300.0,g,carn picada
@@ -469,7 +469,7 @@ Muffins de nabius (sense sucre),0.5g de sal (opcional),,,sal i pebre
 Muffins de nabius (sense sucre),25g de mantega sense sal o oli de coco,25.0,g,mantega sense sal
 Muffins de nabius (sense sucre),100ml de llet sencera,100.0,ml,llet sencera
 Muffins de nabius (sense sucre),1 ou,1.0,,ous
-Muffins de nabius (sense sucre),2ml d'essència de vainilla,2.0,ml,essencia de vainilla
+Muffins de nabius (sense sucre),2ml d'essència de vainilla,,,essencia de vainilla
 Muffins de nabius (sense sucre),60g de nabius,60.0,g,nabius
 Ceto-Pizza,200g d'arròs de coliflor (=coliflor rallada),200.0,g,arros de coliflor
 Ceto-Pizza,120g de formatge parmesà,120.0,g,formatge parmesa
@@ -488,7 +488,7 @@ Coquitos de xocolata,40g de coco ratllat,40.0,g,coco ratllat
 Coquitos de xocolata,1 blanc d’ou,1.0,,ous
 Coquitos de xocolata,20g d'eritritol,,,eritritol
 Coquitos de xocolata,Un pessic de sal,,,un pessic de sal
-Coquitos de xocolata,1ml d'essència de vainilla,1.0,ml,essencia de vainilla
+Coquitos de xocolata,1ml d'essència de vainilla,,,essencia de vainilla
 Coquitos de xocolata,10g de xocolata 90%,10.0,g,xocolata 90%
 Coquitos de xocolata,15ml d'oli de coco (opcional),,,oli de coco
 Peix amb pernil,"400 g de peix: dorada, lubina, truita…",400.0,g,"peix: dorada, lubina, truita..."
@@ -568,11 +568,11 @@ Tortitas de coliflor amb formatge i salmó fumat,10g de lli mòlt (opcional),10.
 Tortitas de coliflor amb formatge i salmó fumat,Sal i pebre al gust,,,sal i pebre
 Tortitas de coliflor amb formatge i salmó fumat,50g de salmó fumat,50.0,g,salmo fumat
 Tortitas de coliflor amb formatge i salmó fumat,7ml d'oli d'oliva,,,oli d'oliva
-Costelles de porc BBQ,"400g de costellam de porc complet (suposant 50% carn, 50% ossos)",400.0,g,costellam de porc complet
+Costelles de porc BBQ,"400g de costellam de porc complet (suposant 50% carn, 50% ossos)",400.0,g,costella de porc
 Costelles de porc BBQ,Sal i pebre,,,sal i pebre
 Brioix de xocolata,40g de xocolata 90%,40.0,g,xocolata 90%
 Brioix de xocolata,1 ou,1.0,,ous
-Brioix de xocolata,2ml d'essència de vainilla,2.0,ml,essencia de vainilla
+Brioix de xocolata,2ml d'essència de vainilla,,,essencia de vainilla
 Brioix de xocolata,50g d'alvocat,50.0,g,alvocat
 Brioix de xocolata,10g de mantega (o oli de coco),10.0,g,mantega
 Brioix de xocolata,25ml de llet sencera o nata líquida,25.0,ml,nata liquida
@@ -671,14 +671,14 @@ Iogurt grec amb nabius i cetogranola,30g cetogranola,30.0,g,cetogranola
 Cetogranola,80g d'ametlles naturals,80.0,g,ametlles naturals
 Cetogranola,70g de nous naturals,70.0,g,nous
 Cetogranola,20g de llavors de carbassa,20.0,g,llavors de carbassa
-Cetogranola,5-10g de chía (opcional),10.0,g,de chia
+Cetogranola,5-10g de chía (opcional),10.0,g,xia
 Cetogranola,20g d'ametlles filetejades (opcional),20.0,g,ametlles filetejades
 Cetogranola,35g de llavors de lli mòltes,35.0,g,llavors de lli moltes
 Cetogranola,10g de coco ratllat,10.0,g,coco ratllat
 Cetogranola,55g d'eritritol,,,eritritol
 Cetogranola,1 ou,1.0,,ous
 Cetogranola,30g de mantega o oli de coco,30.0,g,mantega
-Cetogranola,5ml d'essència de vainilla,5.0,ml,essencia de vainilla
+Cetogranola,5ml d'essència de vainilla,,,essencia de vainilla
 Peix a la mallorquina,400g bacallà (200 per ració),400.0,g,bacalla
 Peix a la mallorquina,200g patata,200.0,g,patata
 Peix a la mallorquina,1 Manat bledes,1.0,,manat de bledes
@@ -730,9 +730,9 @@ Amanida de colors,20g de llavors de carbassa,20.0,g,llavors de carbassa
 Amanida de colors,5g de coriandre o menta fresca (opcional),,,coriandre o menta fresca
 Amanida de colors,0.5g pebre vermell picant a pols (opcional),0.5,g,pebre vermell picant a pols
 Iogurt grec amb ametlles i nabius,200g iogurt grec natural,200.0,g,iogurt grec
-Iogurt grec amb ametlles i nabius,100-150g de maduixes (o fruits vermells),150.0,g,de maduixes
+Iogurt grec amb ametlles i nabius,100-150g de maduixes (o fruits vermells),150.0,g,maduixes o fruits vermells
 Iogurt grec amb ametlles i nabius,30g de nous i ametlles (o cet-granola si encara en tens de feta),30.0,g,nous i ametlles
-Iogurt grec amb ametlles i nabius,10-20g de chía,20.0,g,de chia
+Iogurt grec amb ametlles i nabius,10-20g de chía,20.0,g,xia
 Iogurt grec amb ametlles i nabius,Canyella al gust,,,canyella
 Sopes mallorquines,3 cullerades d’Oli d'oliva extra verge o ecològic,,,oli d'oliva
 Sopes mallorquines,3 alls,60.0,g,alls
@@ -779,10 +779,10 @@ Pad-thai,100g ceba tendra (part verda de la tija),100.0,g,ceba tendra
 Pad-thai,50g de brots de soja en conserva,50.0,g,brots de soja en conserva
 Pad-thai,10g de fulletes de coriandre per servir (5g cada porció),10.0,g,fulletes de coriandre per servir
 Pad-thai,10g de cacauets torrats per servir (5g cada porció),,,cacauets torrats
-Pad-thai,2-3g d'edulcorant per a la salsa,3.0,g,d'edulcorant per a la salsa
+Pad-thai,2-3g d'edulcorant per a la salsa,,,edulcorant
 Pad-thai,15ml de suc de taronja per a la salsa,15.0,ml,suc de taronja per a la salsa
 Pad-thai,15ml de salsa de soja per a la salsa,15.0,ml,salsa de soja per a la salsa
-Pad-thai,10g de crema de cacauats per a la salsa,10.0,g,crema de cacauats per a la salsa
+Pad-thai,10g de crema de cacauats per a la salsa,,,crema de cacauats
 Fajitas de pollastre,300g de pit de pollastre sense pinyol i sense pell,300.0,g,pit de pollastre
 Fajitas de pollastre,100g de ceba dolça,100.0,g,ceba dolca
 Fajitas de pollastre,100g de pebrot vermell (o verd o mixts),100.0,g,pebrot vermell
@@ -790,11 +790,11 @@ Fajitas de pollastre,10ml d'AOVE,,,oli d'oliva
 Fajitas de pollastre,40g d'alvocat per servir (20g cada porció),40.0,g,alvocat
 Fajitas de pollastre,4 ous,4.0,,ous
 Fajitas de pollastre,140 g de formatge crema,140.0,g,formatge crema
-Fajitas de pollastre,3 cullerades de psillium,3.0,,cullerades de psillium
+Fajitas de pollastre,3 cullerades de psillium,,,psillium
 Fajitas de pollastre,sal,,,sal i pebre
 Lasanya,8 ous,8.0,,ous
 Lasanya,175 g de formatge crema,175.0,g,formatge crema
-Lasanya,5-6 cullerades de psyllium,6.0,,cullerades de psyllium
+Lasanya,5-6 cullerades de psyllium,,,psillium
 Lasanya,sal,,,sal i pebre
 Lasanya,100 g ceba,100.0,g,ceba
 Lasanya,2 all,40.0,g,alls
@@ -817,7 +817,7 @@ Espaguetis (konjac) marinera amb cloïsses i musclos,40ml vi blanc (opcional),40
 Espaguetis (konjac) marinera amb cloïsses i musclos,julivert,,,julivert
 Espaguetis (konjac) marinera amb cloïsses i musclos,15 olives,15.0,,olives
 Espaguetis (konjac) marinera amb cloïsses i musclos,20 g de tàperes,20.0,g,taperes
-Espaguetis (konjac) marinera amb cloïsses i musclos,2 cullerades d’OOVE,2.0,,cullerades de oove
+Espaguetis (konjac) marinera amb cloïsses i musclos,2 cullerades d’OOVE,,,oli d\oliva
 Espaguetis (konjac) marinera amb cloïsses i musclos,Sal i pebre bo,,,sal i pebre
 Espinacs saltejats amb pinyons i ametlles,300 g d’espinacs,300.0,g,espinacs
 Espinacs saltejats amb pinyons i ametlles,½ ceba,100.0,g,ceba
@@ -828,7 +828,7 @@ Espinacs saltejats amb pinyons i ametlles,"OOVE, sal i pebre bo",,,oli d'oliva
 "Iogurt grec amb flocs de civada, ametlles, tahin i nabius",125 g de iogurt grec,125.0,g,iogurt grec
 "Iogurt grec amb flocs de civada, ametlles, tahin i nabius",30 g de flocs de civada,30.0,g,flocs de civada
 "Iogurt grec amb flocs de civada, ametlles, tahin i nabius","30g de fruits secs: ametlles, avellanes, cacahuets, crema de cacahuet, tahin, pipes girasol,",30.0,g,fruits secs
-"Iogurt grec amb flocs de civada, ametlles, tahin i nabius",1 cullerada de tahin,1.0,,cullerada de tahin
+"Iogurt grec amb flocs de civada, ametlles, tahin i nabius",1 cullerada de tahin,,,tahin
 "Iogurt grec amb flocs de civada, ametlles, tahin i nabius",100 g de nabius o altres fruits vermells. També pot ser qualsevol altre fruita! (els fruits,100.0,g,nabius
 Pitreres de pollastre amb verduretes (al forn) i espècies,400 g de pitreres de pollastre,400.0,g,pitrera de pollastre
 Pitreres de pollastre amb verduretes (al forn) i espècies,150 g de xampinyons,150.0,g,xampinyons
@@ -848,10 +848,10 @@ Iogurt grec amb ametlles,30 g d’ametlles,30.0,g,ametlles
 "Truita d’espàrrecs, all i cúrcuma",6 ous,6.0,,ous
 "Truita d’espàrrecs, all i cúrcuma",100 g d’espàrrecs,100.0,g,esparrecs
 "Truita d’espàrrecs, all i cúrcuma",2 alls,40.0,g,alls
-"Truita d’espàrrecs, all i cúrcuma",4 g de cúrcuma fresca rallada,4.0,g,curcuma fresca rallada
+"Truita d’espàrrecs, all i cúrcuma",4 g de cúrcuma fresca rallada,4.0,g,curcuma fresca
 Pasta de carabassí amb bròquil feta i alfabaguera/herba sana,300 g de pasta de carabassí,300.0,g,pasta de carabassi
 Pasta de carabassí amb bròquil feta i alfabaguera/herba sana,100 g de carn picada,100.0,g,carn picada
-Pasta de carabassí amb bròquil feta i alfabaguera/herba sana,100 g feta,100.0,g,feta
+Pasta de carabassí amb bròquil feta i alfabaguera/herba sana,100 g feta,100.0,g,formatge feta
 Pasta de carabassí amb bròquil feta i alfabaguera/herba sana,20 g d’alfabaguera fresca o herba sana,20.0,g,alfabaguera fresca o herba sana
 Pasta de carabassí amb bròquil feta i alfabaguera/herba sana,"OOVE, sal i pebre bo",,,oli d'oliva
 Crema detox de xirivia i carxofa,½ L de brou de verdures (o de pollastre),500.0,ml,brou de verdures
@@ -859,19 +859,19 @@ Crema detox de xirivia i carxofa,½ ceba,100.0,g,ceba
 Crema detox de xirivia i carxofa,1 porro,1.0,,porro
 Crema detox de xirivia i carxofa,50 g de xirivia,50.0,g,xirivia
 Crema detox de xirivia i carxofa,125 g de carxofes pelades (fresques),125.0,g,carxofes
-Crema detox de xirivia i carxofa,1 culleradeta de cafè de cúrcuma,1.0,,culleradeta de cafe de curcuma
-Crema detox de xirivia i carxofa,1 cullerada de postres de miso,1.0,,cullerada de postres de miso
+Crema detox de xirivia i carxofa,1 culleradeta de cafè de cúrcuma,,,cafe de curcuma
+Crema detox de xirivia i carxofa,1 cullerada de postres de miso,,,postres de miso
 Crema detox de xirivia i carxofa,Suc de llimona (menys de mitja llimona),0.5,,llimona
 Crema detox de xirivia i carxofa,"OOVE, sal i pebre bo",,,oli d'oliva
-Crema detox de xirivia i carxofa,1 cullerada de pipes de carabassa,1.0,,cullerada de pipes de carabassa
-Crema detox de xirivia i carxofa,1 cullerada de pipes de girasol,1.0,,cullerada de pipes de girasol
+Crema detox de xirivia i carxofa,1 cullerada de pipes de carabassa,,,pipes de carabassa
+Crema detox de xirivia i carxofa,1 cullerada de pipes de girasol,,,pipes de girasol
 "Amanida de ruca amb iogurt grec, ametlles i tahin",50 g de ruca,50.0,g,ruca
 "Amanida de ruca amb iogurt grec, ametlles i tahin",4 xerris,4.0,,xerris
 "Amanida de ruca amb iogurt grec, ametlles i tahin",10 g de coriandre o julivert,,,julivert
 "Amanida de ruca amb iogurt grec, ametlles i tahin",10-20 g de ceba morada,20.0,g,ceba morada
 "Amanida de ruca amb iogurt grec, ametlles i tahin",2 cullerada sopera de iogurt grec,30.0,g,iogurt grec
 "Amanida de ruca amb iogurt grec, ametlles i tahin",30 g d’ametlles,30.0,g,ametlles
-"Amanida de ruca amb iogurt grec, ametlles i tahin",2 cullerades de postres de tahin,2.0,,cullerades de postres de tahin
+"Amanida de ruca amb iogurt grec, ametlles i tahin",2 cullerades de postres de tahin,,,tahin
 "Amanida de ruca amb iogurt grec, ametlles i tahin","OOVE, sal i llimona",0.5,,llimona
 Salmó a la planxa amb xampinyons farcits de formatge blau,200 g de salmó fresc,200.0,g,salmo fresc
 Salmó a la planxa amb xampinyons farcits de formatge blau,200 g de xampinyons,200.0,g,xampinyons
@@ -891,7 +891,7 @@ Amanida d’escarola amb bolets,suc de ½ llimona,0.5,,llimona
 Amanida d’escarola amb bolets,"OOVE, sal i pebre bo",,,oli d'oliva
 Sopa miso,300 ml de brou de verdures o de pollastre,300.0,ml,brou de verdures o pollastre
 Sopa miso,"1 full d’alga nori / ortigues (si tens tiroides posa ortigues, no alga)",1.0,,full d'alga nori / ortigues
-Sopa miso,1 cullerada cafè miso,1.0,,cullerada de cafe miso
+Sopa miso,1 cullerada cafè miso,,,cullerada de cafe miso
 Sopa miso,1 grell,1.0,,grell
 Sopa miso,30 g de bolets (dels que tenguis),30.0,g,bolets
 Sopa miso,2 ous / 1 llauna de tonyina / una mica de pernil…,2.0,,ous
@@ -966,7 +966,7 @@ Coes de llagostins amb bolets,2 alls,40.0,g,alls
 Coes de llagostins amb bolets,"OOVE, sal i pebre bo",,,oli d'oliva
 Calamar a la planxa amb bledes saltejades amb all i cúrcuma,1 calamar (o 2 si son petits),1.0,,calamar
 Calamar a la planxa amb bledes saltejades amb all i cúrcuma,2 alls,40.0,g,alls
-Calamar a la planxa amb bledes saltejades amb all i cúrcuma,150 - 200 g de bledes,200.0,g,de bledes
+Calamar a la planxa amb bledes saltejades amb all i cúrcuma,150 - 200 g de bledes,200.0,g,bledes
 Calamar a la planxa amb bledes saltejades amb all i cúrcuma,5 g de cúrcuma fresca,5.0,g,curcuma fresca
 Calamar a la planxa amb bledes saltejades amb all i cúrcuma,"OOVE, sal",,,"oove, sal"
 Dorada a la sal amb maionesa,1 Daurada,1.0,,daurada
@@ -1000,7 +1000,7 @@ Pesto d’alfàbrega,2 alls All,40.0,g,alls
 Pesto d’alfàbrega,120 ml Oli d'oliva verge extra,,,oli d'oliva
 Pesto d’alfàbrega,Sal i pebre al gust,,,sal i pebre
 Ous Remenats amb Espinacs i Alvocat,3 Ous,3.0,,ous
-Ous Remenats amb Espinacs i Alvocat,100 g espinacs frescos,100.0,g,espinacs frescos
+Ous Remenats amb Espinacs i Alvocat,100 g espinacs frescos,100.0,g,espinacs frescs
 Ous Remenats amb Espinacs i Alvocat,½ Alvocat,100.0,g,alvocat
 Ous Remenats amb Espinacs i Alvocat,Sal i pebre al gust,,,sal i pebre
 Ous Remenats amb Espinacs i Alvocat,10 g mantega per cuinar,10.0,g,mantega
@@ -1016,11 +1016,11 @@ Amanida de Llagostins amb Alvocat i Amaniment de Llimona,"Llimona (mitja, sucs i
 Amanida de Llagostins amb Alvocat i Amaniment de Llimona,10 g Oli d'oliva verge extra,,,oli d'oliva
 Amanida de Llagostins amb Alvocat i Amaniment de Llimona,Sal i pebre al gust,,,sal i pebre
 Pit de cal d’indi (d’ahir) amb amanida verda amb formatge brie,Pit de cal d’indi d’ahir a migdia,,,pit de cal d'indi d'ahir a migdia
-Pit de cal d’indi (d’ahir) amb amanida verda amb formatge brie,"70-100 g d’amanida verda (fulles de lletuga, espinacs, rúcula, etc.)",100.0,g,d'amanida verda
+Pit de cal d’indi (d’ahir) amb amanida verda amb formatge brie,"70-100 g d’amanida verda (fulles de lletuga, espinacs, rúcula, etc.)",100.0,g,amanida verda
 Pit de cal d’indi (d’ahir) amb amanida verda amb formatge brie,60 g formatge brie (quantitat segons preferència),60.0,g,formatge brie
 Truita amb formatge blau i espinacs,4 Ous,4.0,,ous
 Truita amb formatge blau i espinacs,40 g formatge blau (quantitat al gust),40.0,g,formatge blau
-Truita amb formatge blau i espinacs,100 g Espinacs frescos,100.0,g,espinacs frescos
+Truita amb formatge blau i espinacs,100 g Espinacs frescos,100.0,g,espinacs frescs
 Pollastre Torrat amb Ruca Trempada,250g de Pitrera de pollastre,250.0,g,pitrera de pollastre
 Pollastre Torrat amb Ruca Trempada,50-100g Ruca,100.0,g,ruca
 Pollastre Torrat amb Ruca Trempada,7-10 g Oli d'oliva,,,oli d'oliva
