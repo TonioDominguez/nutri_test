@@ -77,29 +77,22 @@ def generate_shopping_list(menu, ingredients_data):
 
 def create_menu_grid(menu):
     """Crea una tabla/grid con el menú semanal"""
-    # Crear un DataFrame para la visualización en grid
     days = ["Dilluns", "Dimarts", "Dimecres", "Dijous", "Divendres", "Dissabte", "Diumenge"]
     meals = ["Desdejuni", "Dinar", "Sopar", "Snack"]
 
-    menu_grid = pd.DataFrame(index=meals, columns=days)
-
-    #for day in days:
-     #   for meal in meals:
-      #      if day in menu and meal in menu[day]:
-       #         menu_grid.loc[meal, day] = menu[day][meal]["nom"]
-        #    else:
-         #       menu_grid.loc[meal, day] = "Lliure"
+    # Ahora filas = días, columnas = tipos de comida
+    menu_grid = pd.DataFrame(index=days, columns=meals)
 
     for day in days:
         for meal in meals:
             if day in menu and meal in menu[day]:
                 dishes = menu[day][meal]
                 if dishes:
-                    menu_grid.loc[meal, day] = ", ".join([dish["nom"] for dish in dishes])
+                    menu_grid.loc[day, meal] = ", ".join([dish["nom"] for dish in dishes])
                 else:
-                    menu_grid.loc[meal, day] = "———"
+                    menu_grid.loc[day, meal] = "———"
             else:
-                menu_grid.loc[meal, day] = "———"
+                menu_grid.loc[day, meal] = "———"
     return menu_grid
 
 # Function to set borderlines to grid in WORD
@@ -250,18 +243,18 @@ if st.button("Generar Menú Setmanal"):
     
     # Grid in DOC
     
-    table = doc.add_table(rows=len(meals)+1, cols=len(days)+1)
+    table = doc.add_table(rows=len(days)+1, cols=len(meals)+1)
 
     table.cell(0, 0).text = ""
+    for i, meal in enumerate(meals):
+        table.cell(0, i+1).text = meal
     for i, day in enumerate(days):
-        table.cell(0, i+1).text = day
-    for i, meal in enumerate(meals):
-        table.cell(i+1, 0).text = meal
+        table.cell(i+1, 0).text = day
 
-    for i, meal in enumerate(meals):
-        for j, day in enumerate(days):
-            dishes = menu[day][meal]  
-            if not dishes:  
+    for i, day in enumerate(days):
+        for j, meal in enumerate(meals):
+            dishes = menu[day][meal]
+            if not dishes:
                 table.cell(i + 1, j + 1).text = "———"
             else:
                 table.cell(i + 1, j + 1).text = ", ".join([dish["nom"] for dish in dishes])
