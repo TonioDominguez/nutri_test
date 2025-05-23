@@ -210,11 +210,12 @@ if st.button("Generar Menú Setmanal"):
 
     #Shopping list visualization
     st.subheader("Llista de la compra")
-    for ingredient, details in shopping_list.items():
+    for ingredient in sorted(shopping_list.keys()):
+        details = shopping_list[ingredient]
         cantidad = details['cantidad']
         unidad = details['unidad']
         if cantidad > 0:
-            st.write(f"- {ingredient}: {cantidad} {unidad}")
+            st.write(f"- {cantidad} {unidad} {ingredient}")
         else:
             st.write(f"- {ingredient}")
     
@@ -275,11 +276,13 @@ if st.button("Generar Menú Setmanal"):
     doc.add_page_break()
     doc.add_heading("Llista de la compra", level=1)
 
-    for ingredient, details in shopping_list.items():
+    # Ordenar la lista de la compra alfabéticamente
+    for ingredient in sorted(shopping_list.keys()):
+        details = shopping_list[ingredient]
         cantidad = details['cantidad']
         unidad = details['unidad']
         if cantidad > 0:
-            doc.add_paragraph(f"- {ingredient}: {cantidad} {unidad}")
+            doc.add_paragraph(f"- {cantidad} {unidad} {ingredient}")
         else:
             doc.add_paragraph(f"- {ingredient}")
     
