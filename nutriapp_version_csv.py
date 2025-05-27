@@ -287,9 +287,6 @@ if st.button("Generar Menú Setmanal"):
     doc.add_page_break()
     doc.add_heading("Llista de la compra", level=1)
 
-    doc.add_page_break()
-    doc.add_heading("Llista de la compra", level=1)
-
     # Agrupar ingredientes por tipo
     categorized_list = {}
     for ingredient, details in shopping_list.items():
