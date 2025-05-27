@@ -61,6 +61,7 @@ def generate_shopping_list(menu, ingredients_data):
                         ing_name = ingredient['ingrediente_estandar']
                         cantidad = ingredient['cantidad']
                         unidad = ingredient['unidad']
+                        tipo = ingredient['tipo_ingrediente'] if pd.notna(ingredient['tipo_ingrediente']) else 'Altres'
 
                         if ing_name in shopping_list:
                             if pd.notna(cantidad):
@@ -68,7 +69,8 @@ def generate_shopping_list(menu, ingredients_data):
                         else:
                             shopping_list[ing_name] = {
                                 'cantidad': cantidad if pd.notna(cantidad) else 0,
-                                'unidad': unidad if pd.notna(unidad) else ''
+                                'unidad': unidad if pd.notna(unidad) else '',
+                                'tipo': tipo
                             }
 
     return shopping_list
@@ -203,14 +205,30 @@ if st.button("Generar Menú Setmanal"):
 
     #Shopping list visualization
     st.subheader("Llista de la compra")
-    for ingredient in sorted(shopping_list.keys()):
-        details = shopping_list[ingredient]
+    # Agrupar ingredientes por tipo
+    categorized_list = {}
+    for ingredient, details in shopping_list.items():
+        tipo = details['tipo']
+        if tipo not in categorized_list:
+            categorized_list[tipo] = []
+
         cantidad = details['cantidad']
         unidad = details['unidad']
+
         if cantidad > 0:
-            st.write(f"- {cantidad} {unidad} {ingredient}")
+            item = f"- {cantidad} {unidad} {ingredient}"
         else:
-            st.write(f"- {ingredient}")
+            item = f"- {ingredient}"
+
+        categorized_list[tipo].append((ingredient, item))
+
+    # Mostrar la lista categorizada
+    for category in sorted(categorized_list.keys()):
+        st.write(f"#### {category}")
+        # Ordenar los ingredientes alfabéticamente dentro de cada categoría
+        sorted_items = sorted(categorized_list[category], key=lambda x: x[0])
+        for _, item_text in sorted_items:
+            st.write(item_text)
     
     #Menu visualization
     st.subheader("Menú Setmanal")
@@ -269,15 +287,33 @@ if st.button("Generar Menú Setmanal"):
     doc.add_page_break()
     doc.add_heading("Llista de la compra", level=1)
 
-    # Ordenar la lista de la compra alfabéticamente
-    for ingredient in sorted(shopping_list.keys()):
-        details = shopping_list[ingredient]
+    doc.add_page_break()
+    doc.add_heading("Llista de la compra", level=1)
+
+    # Agrupar ingredientes por tipo
+    categorized_list = {}
+    for ingredient, details in shopping_list.items():
+        tipo = details['tipo']
+        if tipo not in categorized_list:
+            categorized_list[tipo] = []
+
         cantidad = details['cantidad']
         unidad = details['unidad']
+
         if cantidad > 0:
-            doc.add_paragraph(f"- {cantidad} {unidad} {ingredient}")
+            item = f"{cantidad} {unidad} {ingredient}"
         else:
-            doc.add_paragraph(f"- {ingredient}")
+            item = f"{ingredient}"
+
+        categorized_list[tipo].append((ingredient, item))
+
+    # Añadir cada categoría al documento
+    for category in sorted(categorized_list.keys()):
+        doc.add_heading(category, level=2)
+        # Ordenar los ingredientes alfabéticamente dentro de cada categoría
+        sorted_items = sorted(categorized_list[category], key=lambda x: x[0])
+        for _, item_text in sorted_items:
+            doc.add_paragraph(f"- {item_text}")
     
     # Corpus DOC
     
