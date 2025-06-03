@@ -5,6 +5,7 @@ from docx import Document # To doc export part 4 the menu
 from io import BytesIO
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
+from docx.shared import Pt, RGBColor
 
 # Function to load the CSV data
 @st.cache_data
@@ -115,6 +116,23 @@ def set_table_borders(table):
                 tcBorders.append(border)
 
             tcPr.append(tcBorders)
+
+
+#Function to set font to all doc
+def set_document_font(doc, font_name='Vietnam'):
+    
+    # Configurar estilo Normal (base para todo el documento)
+    style = doc.styles['Normal']
+    font = style.font
+    font.name = font_name
+    font.size = Pt(11)
+
+    # Configurar estilos de encabezados
+    for level in range(1, 4):
+        heading_style = doc.styles[f'Heading {level}']
+        heading_font = heading_style.font
+        heading_font.name = font_name
+        heading_font.color.rgb = RGBColor(0, 0, 0)  # Negro en lugar de azul
 
 # Load the data
 st.title("Generador de Menús Setmanals")
@@ -256,6 +274,7 @@ if st.button("Generar Menú Setmanal"):
     
 
     doc = Document()
+    set_document_font(doc, 'Vietnam')  # Aplicar fuente Vietnam a todo el documento
     doc.add_heading("Menú Setmanal", level=1)
 
     
@@ -279,7 +298,11 @@ if st.button("Generar Menú Setmanal"):
 
     for row in table.rows:
         for cell in row.cells:
-            cell.paragraphs[0].alignment = 1  
+            cell.paragraphs[0].alignment = 1
+            # Aplicar fuente Vietnam a las celdas de la tabla
+            for paragraph in cell.paragraphs:
+                for run in paragraph.runs:
+                    run.font.name = 'Vietnam'  
     
     set_table_borders(table) #Function to apply borders
 
